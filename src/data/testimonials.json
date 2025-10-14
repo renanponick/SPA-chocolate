@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Silva",
+    "text": "Os brigadeiros são simplesmente divinos! Encomendei para o aniversário da minha filha e todos adoraram. A qualidade é incomparável!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=1"
+  },
+  {
+    "id": 2,
+    "name": "João Santos",
+    "text": "Melhor brownie que já comi na vida! Úmido, saboroso e com ingredientes de primeira. Virei cliente fiel!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=12"
+  },
+  {
+    "id": 3,
+    "name": "Ana Paula",
+    "text": "Comprei o kit romântico para presentear meu marido e ele ficou encantado. A apresentação é impecável e o sabor é maravilhoso!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=5"
+  },
+  {
+    "id": 4,
+    "name": "Carlos Eduardo",
+    "text": "Atendimento excepcional e produtos de altíssima qualidade. Os brigadeiros de pistache são meu vício!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=13"
+  },
+  {
+    "id": 5,
+    "name": "Fernanda Costa",
+    "text": "Encomendei para o evento da empresa e foi um sucesso absoluto. Todo mundo pediu o contato! Recomendo demais!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=9"
+  },
+  {
+    "id": 6,
+    "name": "Ricardo Alves",
+    "text": "Qualidade premium em cada detalhe. Os doces são verdadeiras obras de arte comestíveis. Vale cada centavo!",
+    "rating": 5,
+    "photo": "https://i.pravatar.cc/150?img=14"
+  }
+]
+

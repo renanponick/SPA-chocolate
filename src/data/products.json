@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "name": "Brigadeiro Gourmet Tradicional",
+    "description": "Brigadeiro cremoso feito com chocolate belga premium e leite condensado artesanal",
+    "price": 4.00,
+    "category": "Brigadeiros",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Brigadeiro de Pistache",
+    "description": "Brigadeiro sofisticado com pistaches importados e toque de flor de sal",
+    "price": 5.50,
+    "category": "Brigadeiros",
+    "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Brigadeiro de Maracujá",
+    "description": "Brigadeiro refrescante com polpa de maracujá natural e chocolate branco",
+    "price": 4.50,
+    "category": "Brigadeiros",
+    "image": "https://images.unsplash.com/photo-1650937194300-b912dbc35277?w=800&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Brownie com Nozes",
+    "description": "Brownie denso e úmido com nozes pecã e cobertura de chocolate meio amargo",
+    "price": 9.00,
+    "category": "Brownies",
+    "image": "https://images.unsplash.com/photo-1607920591413-4ec007e70023?w=800&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Brownie Red Velvet",
+    "description": "Brownie aveludado com cream cheese e raspas de chocolate branco",
+    "price": 10.00,
+    "category": "Brownies",
+    "image": "https://images.unsplash.com/photo-1578775887804-699de7086ff9?w=800&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Caixa Presente Luxo",
+    "description": "Caixa elegante com 12 brigadeiros sortidos e laço personalizado",
+    "price": 55.00,
+    "category": "Presentes",
+    "image": "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Kit Romântico",
+    "description": "Caixa coração com 16 brigadeiros gourmet e mensagem personalizada",
+    "price": 70.00,
+    "category": "Presentes",
+    "image": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?w=800&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Torta de Brigadeiro",
+    "description": "Torta cremosa com base crocante e camadas de brigadeiro gourmet",
+    "price": 85.00,
+    "category": "Sobremesas",
+    "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80"
+  },
+  {
+    "id": 9,
+    "name": "Palha Italiana Premium",
+    "description": "Palha italiana com biscoito champagne e chocolate nobre",
+    "price": 12.00,
+    "category": "Sobremesas",
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Brigadeiro de Café",
+    "description": "Brigadeiro intenso com café especial e chocolate 70% cacau",
+    "price": 4.50,
+    "category": "Brigadeiros",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80"
+  },
+  {
+    "id": 11,
+    "name": "Brownie Vegano",
+    "description": "Brownie 100% vegano com chocolate amargo e nozes",
+    "price": 11.00,
+    "category": "Brownies",
+    "image": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&q=80"
+  },
+  {
+    "id": 12,
+    "name": "Kit Corporativo",
+    "description": "Caixa elegante com 30 doces sortidos, ideal para empresas",
+    "price": 120.00,
+    "category": "Presentes",
+    "image": "https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e?w=800&q=80"
+  }
+]
+
