@@ -29,7 +29,7 @@ function App() {
               onOpenLogin={() => setIsLoginOpen(true)}
             />
             
-            <main>
+            <main className='overflow-hidden'>
               <Hero />
               <Products />
               <GiftsEvents />

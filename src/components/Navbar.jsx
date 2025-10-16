@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Sun, Moon, User, Menu, X, Heart } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
 import { useTheme } from '../hooks/useTheme';
@@ -37,17 +37,17 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
 
   return (
     <>
-      <motion.nav
+      <nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+          isScrolled || isMobileMenuOpen ? 'bg-card/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <motion.div
+            <div
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => scrollToSection('hero')}
@@ -56,7 +56,7 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
               <span className="text-2xl font-bold text-primary font-['Poppins']">
                 Doce Encanto
               </span>
-            </motion.div>
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
@@ -74,7 +74,7 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
             {/* Icons */}
             <div className="flex items-center space-x-4">
               {/* Theme Toggle */}
-              <motion.button
+              <button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
@@ -86,10 +86,10 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
                 ) : (
                   <Sun className="w-5 h-5" />
                 )}
-              </motion.button>
+              </button>
 
               {/* User/Login */}
-              <motion.button
+              <button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={onOpenLogin}
@@ -97,10 +97,10 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
                 aria-label="Login"
               >
                 {user ? <Heart className="w-5 h-5 fill-primary text-primary" /> : <User className="w-5 h-5" />}
-              </motion.button>
+              </button>
 
               {/* Cart */}
-              <motion.button
+              <button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={onOpenCart}
@@ -109,15 +109,15 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
               >
                 <ShoppingCart className="w-5 h-5" />
                 {getItemCount() > 0 && (
-                  <motion.span
+                  <span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold"
                   >
                     {getItemCount()}
-                  </motion.span>
+                  </span>
                 )}
-              </motion.button>
+              </button>
 
               {/* Mobile Menu Toggle */}
               <button
@@ -130,12 +130,12 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
             </div>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <div
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -145,17 +145,17 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
           >
             <div className="flex flex-col p-6 space-y-4">
               {menuItems.map((item) => (
-                <motion.button
+                <button
                   key={item.section}
                   whileHover={{ x: 10 }}
                   onClick={() => handleMenuClick(item.section)}
                   className="text-left text-xl font-medium text-foreground hover:text-primary transition-colors py-3 border-b border-border"
                 >
                   {item.label}
-                </motion.button>
+                </button>
               ))}
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>
