@@ -48,7 +48,6 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div
-              whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2 cursor-pointer"
               onClick={() => scrollToSection('hero')}
             >
@@ -75,8 +74,6 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
             <div className="flex items-center space-x-4">
               {/* Theme Toggle */}
               <button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-accent transition-colors"
                 aria-label="Alternar tema"
@@ -90,8 +87,6 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
 
               {/* User/Login */}
               <button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 onClick={onOpenLogin}
                 className="p-2 rounded-full hover:bg-accent transition-colors relative"
                 aria-label="Login"
@@ -101,8 +96,6 @@ export const Navbar = ({ onOpenCart, onOpenLogin }) => {
 
               {/* Cart */}
               <button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 onClick={onOpenCart}
                 className="p-2 rounded-full hover:bg-accent transition-colors relative"
                 aria-label="Carrinho"

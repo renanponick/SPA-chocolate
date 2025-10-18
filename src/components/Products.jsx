@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Candy, Cookie, Gift, IceCream } from 'lucide-react';
 import { ProductCard } from './ProductCard';
-import productsData from '../data/products.json';
 import categoriesData from '../data/categories.json';
+import { fetchProducts } from '@/utils/products';
 
 const iconMap = {
   Sparkles,
@@ -15,10 +15,31 @@ const iconMap = {
 
 export const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let mounted = true;
+    const load = async () => {
+      try {
+        const fetched = await fetchProducts();
+        if (mounted && fetched) setProducts(fetched);
+      } catch (err) {
+        if (mounted) setError(err.message || 'Erro ao carregar produtos');
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    };
+    load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const filteredProducts = selectedCategory === 'all'
-    ? productsData
-    : productsData.filter(product => product.category === selectedCategory);
+    ? products
+    : products.filter(product => product.category === selectedCategory);
 
   return (
     <section id="produtos" className="py-20 bg-background">
@@ -49,7 +70,7 @@ export const Products = () => {
           {categoriesData.map((category) => {
             const Icon = iconMap[category.icon];
             const isActive = selectedCategory === category.id;
-            
+
             return (
               <motion.button
                 key={category.id}
@@ -69,27 +90,50 @@ export const Products = () => {
           })}
         </motion.div>
 
+        {/* Loading & Error */}
+        {loading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-20"
+          >
+            <p className="text-xl text-muted-foreground">Carregando produtos...</p>
+          </motion.div>
+        )}
+
+        {error && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-20"
+          >
+            <p className="text-xl text-destructive">Erro: {error}</p>
+          </motion.div>
+        )}
+
         {/* Products Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-        >
-          {filteredProducts.map((product, index) => (
-            <motion.div
-              key={product.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <ProductCard product={product} />
-            </motion.div>
-          ))}
-        </motion.div>
+        {!loading && !error && (
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            {filteredProducts.map((product, index) => (
+              <motion.div
+                key={product.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
 
         {/* Empty State */}
-        {filteredProducts.length === 0 && (
+        {!loading && !error && filteredProducts.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -104,4 +148,3 @@ export const Products = () => {
     </section>
   );
 };
-
